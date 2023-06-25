@@ -1,0 +1,33 @@
+mat-card {
+  margin: 4px;
+  color: #fafafa
+}
+
+.random-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.random{
+  height: 32px;
+  width: 64vw;
+  padding: 16px;
+}
+
+.random-movie-span {
+  background-color: #303030;
+  width: 64vw;
+  height: 32px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button{
+margin-bottom: 16px;
+}
+
+

@@ -1,1 +1,13 @@
-<p>dinner works!</p>
+<mat-card class="random-container">
+  <mat-card-header>Get a random meal</mat-card-header>
+  <mat-card-content class="random">
+  <div class="random-movie-span"></div>
+  </mat-card-content>
+  <mat-card-footer>
+    <button mat-raised-button color="primary">Start</button>
+  </mat-card-footer>
+  </mat-card>
+
+  <mat-card *ngFor="let dinner of dinners">
+    <mat-card-content>{{dinner.title}}</mat-card-content>
+  </mat-card>

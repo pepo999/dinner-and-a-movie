@@ -3,35 +3,35 @@
 @include mat.core();
 
 $orange: (
-    50 : #ffe9e0,
-    100 : #ffc7b3,
-    200 : #ffa280,
-    300 : #ff7d4d,
-    400 : #ff6126,
-    500 : #ff4500,
-    600 : #ff3e00,
-    700 : #ff3600,
-    800 : #ff2e00,
-    900 : #ff1f00,
-    A100 : #ffffff,
-    A200 : #fff3f2,
-    A400 : #ffc4bf,
-    A700 : #ffaca6,
-    contrast: (
-        50 : #000000,
-        100 : #000000,
-        200 : #000000,
-        300 : #000000,
-        400 : #000000,
-        500 : #ffffff,
-        600 : #ffffff,
-        700 : #ffffff,
-        800 : #ffffff,
-        900 : #ffffff,
-        A100 : #000000,
-        A200 : #000000,
-        A400 : #000000,
-        A700 : #000000,
+  50 : #eee4e9,
+  100 : #d5bbc8,
+  200 : #ba8da3,
+  300 : #9e5f7e,
+  400 : #893d63,
+  500 : #741b47,
+  600 : #6c1840,
+  700 : #611437,
+  800 : #57102f,
+  900 : #440820,
+  A100 : #ff7aa7,
+  A200 : #ff4786,
+  A400 : #ff1464,
+  A700 : #fa0055,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #ffffff,
+      400 : #ffffff,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #ffffff,
+      A700 : #ffffff,
     )
 );
 
@@ -104,8 +104,8 @@ $red-palette: (
 $my-primary-dark: mat.define-palette($orange, 500);
 $my-accent-dark: mat.define-palette($blue, 200, 100, 600);
 
-$my-primary-light: mat.define-palette($orange, 600);
-$my-accent-light: mat.define-palette($blue, 200);
+// $my-primary-light: mat.define-palette($orange, 600);
+// $my-accent-light: mat.define-palette($blue, 200);
 
 // The "warn" palette is optional and defaults to red if not specified.
 $my-warn: mat.define-palette($red-palette, 500);
@@ -120,17 +120,17 @@ $my-theme-dark: mat.define-dark-theme((
  density: 0,
 ));
 
-$my-theme-light: mat.define-light-theme((
- color: (
-   primary: $my-primary-light,
-   accent: $my-accent-light,
-   warn: $my-warn,
- ),
- typography: mat.define-typography-config(),
- density: 0,
-));
+// $my-theme-light: mat.define-light-theme((
+//  color: (
+//    primary: $my-primary-light,
+//    accent: $my-accent-light,
+//    warn: $my-warn,
+//  ),
+//  typography: mat.define-typography-config(),
+//  density: 0,
+// ));
 
-@include mat.all-component-themes($my-theme-light);
+@include mat.all-component-themes($my-theme-dark);
 
 
 .dark-mode{

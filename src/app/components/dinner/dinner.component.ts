@@ -7,4 +7,27 @@ import { Component } from '@angular/core';
 })
 export class DinnerComponent {
 
+  dinners: any = [
+    {
+      "title": "Insalatona di riso 2.0",
+      "watched": false
+    },
+    {
+      "title": "Insalatona di riso 2.0",
+      "watched": false
+    },
+    {
+      "title": "Insalatona di riso 2.0",
+      "watched": false
+    },
+    {
+      "title": "Insalatona di riso 2.0",
+      "watched": false
+    },
+    {
+      "title": "Insalatona di riso 2.0",
+      "watched": true
+    },
+  ]
+
 }
