@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -6,18 +6,21 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
-export class MovieComponent {
-  movies: any[] = [];
-  randomMovie?: any;
-  newMovie: any = {};
+export class MovieComponent implements OnInit {
+  @Input() moviesList?: any[];
 
-  constructor(private dataService: DataService) { }
+  randomMovie?: any;
+
+  constructor(public dataService: DataService) { }
 
   ngOnInit() {
+    this.fetchMovies();
+  }
+
+  fetchMovies() {
     this.dataService.getDinnersAndMovies().subscribe(
       (response) => {
-        this.movies = response.filter((item) => Object.keys(item.movie).length !== 0);
-        console.log(this.movies)
+        this.moviesList = response.filter((item) => item.movie.title);
       },
       (error) => {
         console.error('Error fetching movies:', error);
@@ -26,19 +29,19 @@ export class MovieComponent {
   }
 
   getRandomMovie() {
-    const randomIndex = Math.floor(Math.random() * this.movies.length);
-    this.randomMovie = this.movies[randomIndex];
+    const randomIndex = Math.floor(Math.random() * this.moviesList!.length);
+    this.randomMovie = this.moviesList![randomIndex];
   }
 
-  addMovie() {
-    this.dataService.addMovie(this.newMovie).subscribe(
-      (response) => {
-        console.log('Movie added successfully:', response);
+  deleteMovie(movie: any) {
+    this.dataService.delete(movie).subscribe(
+      () => {
+        this.fetchMovies();
       },
       (error) => {
-        console.error('Error adding movie:', error);
+        // Handle error here
+        console.error('Error deleting movie:', error);
       }
     );
   }
-
 }

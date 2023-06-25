@@ -1,14 +1,21 @@
+
+
 <mat-card class="random-container">
-  <mat-card-header>Get a random movie</mat-card-header>
+  <mat-card-header>Tonight's movie will be:</mat-card-header>
   <mat-card-content class="random">
-    <div class="random-movie-span">{{ randomMovie?.movie.title }}</div>
+    <div class="random-movie-span">{{randomMovie?.movie.title}}</div>
   </mat-card-content>
   <mat-card-footer>
-    <button mat-raised-button color="primary" (click)="getRandomMovie()">Start</button>
+    <button class="random-btn" mat-raised-button color="primary" (click)="getRandomMovie()">Get random movie</button>
   </mat-card-footer>
 </mat-card>
 
-<mat-card *ngFor="let movie of movies">
+<ul class="card-container">
+<mat-card *ngFor="let movie of moviesList" class="card">
   <mat-card-content>{{movie.movie.title}}</mat-card-content>
+  <button class="delete-btn" mat-raised-button (click)="this.deleteMovie(movie)">Delete</button>
 </mat-card>
+</ul>
+
+
 

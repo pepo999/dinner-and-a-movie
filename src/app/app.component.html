@@ -1,10 +1,33 @@
 <app-header></app-header>
 <mat-tab-group>
-  <mat-tab label="Movies"><app-movies></app-movies></mat-tab>
+  <mat-tab label="Movies"><app-movies [moviesList]="movies"></app-movies></mat-tab>
   <mat-tab label="Dinner"><app-dinner></app-dinner></mat-tab>
 </mat-tab-group>
-<button mat-fab class="mat-fab" color="primary" aria-label="Example icon button with a plus one icon">
+<button (click)="this.openDialog()" mat-fab class="mat-fab" color="primary" aria-label="Example icon button with a plus one icon">
   <mat-icon color="#fafafa">add</mat-icon>
 </button>
 
-
+<div class="box" *ngIf="this.opened" >
+  <h4>Add a new element</h4>
+  <mat-form-field color="primary">
+    <mat-label>Titolo</mat-label>
+    <input matInput [(ngModel)]="movieTitle" *ngIf="this.value == 'one'">
+    <input matInput [(ngModel)]="dinnerTitle" *ngIf="this.value == 'two'">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select type</mat-label>
+    <mat-select [(ngModel)]="value">
+      <mat-option value="one">Movie</mat-option>
+      <mat-option value="two">Dinner</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="this.value=='two'" class="text">
+    <mat-label>Ingredients</mat-label>
+    <textarea matInput [(ngModel)]="ingredients"></textarea>
+  </mat-form-field>
+  <div class="spacer"></div>
+<div class="buttons-container">
+  <button mat-raised-button color="primary" (click)="add()" class="secondary-btn">Save</button>
+  <button mat-raised-button color="primary" (click)="cancel()" class="secondary-btn">Cancel</button>
+</div>
+</div>

@@ -1,5 +1,46 @@
+
+
 .mat-fab {
   position: absolute;
   bottom: 16px;
-  right: 16px;
+  left: 80vw;
+  z-index: 1;
   }
+
+.box {
+  z-index: 2;
+  position: absolute;
+  top: 2.5vh;
+  left: 2.5vh;
+  width: 90vw;
+  height: 95vh;
+  background-color: #303030;
+  border: solid #741b47 1px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fafafa;
+}
+
+.text {
+  height: 30vh;
+}
+
+.buttons-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 32px;
+}
+
+.secondary-btn {
+  width: 64px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+
+
