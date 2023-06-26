@@ -28,6 +28,7 @@
   <div class="spacer"></div>
 <div class="buttons-container">
   <button mat-raised-button color="primary" (click)="cancel()" class="secondary-btn">Cancel</button>
-  <button mat-raised-button color="primary" (click)="add()" class="secondary-btn">Save</button>
+  <button *ngIf="value=='one'" mat-raised-button color="primary" (click)="add()" class="secondary-btn">Save</button>
+  <button *ngIf="value=='two'" mat-raised-button color="primary" (click)="add()" class="secondary-btn">Save</button>
 </div>
 </div>

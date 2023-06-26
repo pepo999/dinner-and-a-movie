@@ -22,6 +22,13 @@ export class DataService {
       );
   }
 
+  addDinner(dinner: any): any {
+    return this.http.post<any>(this.API_URL, dinner)
+      .pipe(
+        switchMap(() => this.getDinnersAndMovies())
+      );
+  }
+
   delete(movie: any) {
     const { movie: movieData, id, dinner } = movie;
     return this.http

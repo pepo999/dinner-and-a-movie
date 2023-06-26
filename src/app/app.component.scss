@@ -30,8 +30,9 @@
 .buttons-container {
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  gap: 32px;
   padding-bottom: 32px;
+  justify-content: center;
 }
 
 .secondary-btn {

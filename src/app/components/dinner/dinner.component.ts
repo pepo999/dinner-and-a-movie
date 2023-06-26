@@ -6,7 +6,7 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './dinner.component.html',
   styleUrls: ['./dinner.component.scss']
 })
-export class MovieComponent implements OnInit {
+export class DinnerComponent implements OnInit {
   @Input() dinnerList?: any[];
 
   randomDinner?: any;
@@ -33,14 +33,13 @@ export class MovieComponent implements OnInit {
     this.randomDinner = this.dinnerList![randomIndex];
   }
 
-  deleteDinner(movie: any) {
-    this.dataService.delete(movie).subscribe(
+  deleteDinner(dinner: any) {
+    this.dataService.delete(dinner).subscribe(
       () => {
         this.fetchDinner();
       },
       (error) => {
-        // Handle error here
-        console.error('Error deleting movie:', error);
+        console.error('Error deleting dinner:', error);
       }
     );
   }
