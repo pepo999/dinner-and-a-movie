@@ -12,7 +12,7 @@ mat-card {
 
 .random{
   height: 32px;
-  width: 64vw;
+  width: 63vw;
   padding: 16px;
 }
 
@@ -20,12 +20,37 @@ mat-card {
   background-color: #303030;
   width: 64vw;
   height: 32px;
-  border-radius: 5px;
+  border-radius:4px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-button{
+.card-container{
+  list-style: none;
+  padding-left: 0px;
+  margin: 0px;
+  max-height: 63vh;
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 48px;
+}
+
+.delete-btn {
+  margin: 8px 4px 0px 0px;
+}
+
+.random-btn{
 margin-bottom: 16px;
 }
+
+.card-end{
+  background-color: #303030;
+  height: 124px;
+}
+
 
